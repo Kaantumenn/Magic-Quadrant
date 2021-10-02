@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.Table-Labels {
+  background-color: #ADB9C3;
+  color: white;
+  font-family: sans-serif;
+}
+.DotName {
+  font-size: 13px;
+  font-family: sans-serif;
+  color: #3878A2;
+  bottom:-25px;
+  position:relative;
+  left: 20px;
+}
+Input {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+}
+.Graph-Labels {
+  background-color: #E3E4E7;
+  color:white;
+  border-radius: 5px;
+  font-family: sans-serif;
+  position: absolute;
+}
+.Buttons {
+  background-color: #E3E4E7;
+  padding: 0.6vh 0.6vh;
+  border: 0;
+  border-radius: 5px;
+}
+.Graph {
+  height: 400px;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
