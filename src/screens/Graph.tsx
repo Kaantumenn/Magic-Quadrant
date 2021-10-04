@@ -27,6 +27,15 @@ function Graph(props: dataType) {
     props.setData(newState)
   }
 
+  function dragOver(e: any){
+    e.preventDefault();
+    if(e.clientX > 475 || e.clientY > 475 ) return
+    console.log(e.clientX,e.clientY)
+    const leftSide = Math.floor(e.clientX * 100 / 475)
+    const bottomSide = Math.floor(100 - (e.clientY * 100 / 475))
+    changeRow({...currentData, vision: leftSide, ability: bottomSide}, currentData.id)
+  }
+
   function drop(e: any) {
     e.preventDefault();
     if(e.clientX > 475 || e.clientY > 475 ) return
@@ -45,7 +54,7 @@ function Graph(props: dataType) {
 
   return (
     <div>
-      <div style={{width: 500, height: 500, border: "2px solid black"}} onDrop={e => {drop(e)}} onDragEnd={e => {drop(e)}}>
+      <div style={{width: 500, height: 500, border: "2px solid black"}} onDragOver={e=> {dragOver(e)}} onDrop={e => {drop(e)}} onDragEnd={e => {drop(e)}} >
         <div className="Graph-Labels" style={{border: "2px solid lightgrey", position:"absolute", top: 250, width:495}}/>
         <div className="Graph-Labels" style={{border: "2px solid lightgrey", position:"absolute", top: 250, width:495, transform:"rotate(90deg)"}}/>
         <div className="Graph-Labels" style={{marginLeft:75}}>Challengers</div>
